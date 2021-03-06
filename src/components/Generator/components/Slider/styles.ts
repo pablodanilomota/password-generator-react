@@ -9,6 +9,7 @@ export const Container = styled.div`
 
 export const Span = styled.span`
   color: white;
+  font-size: 14px;
   font-weight: bold;
 `
 

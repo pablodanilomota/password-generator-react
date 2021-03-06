@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 
 /**
  * Styles.
@@ -10,13 +10,16 @@ import { Container, CheckboxContainer, Span } from './styles'
  */
 import { Checkbox } from 'semantic-ui-react'
 
+import { PasswordGenerateContext } from '../Context'
+
+/**
+ * Component.
+ */
 export function CheckBoxContainer() {
   /**
-   * States.
+   * Hooks.
    */
-  const [isUpperCase, setUpperCase] = useState(false)
-  const [isNumber, setNumber] = useState(false)
-  const [isSpecialCharacter, setSpecialCharacter] = useState(false)
+  const { setParams, params } = useContext(PasswordGenerateContext)
 
   /**
    * JSX.
@@ -26,24 +29,42 @@ export function CheckBoxContainer() {
       <CheckboxContainer>
         <Checkbox
           slider
-          checked={isUpperCase}
-          onChange={() => setUpperCase(!isUpperCase)}
+          checked={params.hasUpperCaseLetters}
+          onChange={() =>
+            setParams({
+              hasNumber: params.hasNumber,
+              hasSpecialCharacter: params.hasSpecialCharacter,
+              hasUpperCaseLetters: !params.hasUpperCaseLetters
+            })
+          }
         />
         <Span>UpperCase Letters</Span>
       </CheckboxContainer>
       <CheckboxContainer>
         <Checkbox
           slider
-          checked={isNumber}
-          onClick={() => setNumber(!isNumber)}
+          checked={params.hasNumber}
+          onClick={() =>
+            setParams({
+              hasNumber: !params.hasNumber,
+              hasSpecialCharacter: params.hasSpecialCharacter,
+              hasUpperCaseLetters: params.hasUpperCaseLetters
+            })
+          }
         />
         <Span>Numbers</Span>
       </CheckboxContainer>
       <CheckboxContainer>
         <Checkbox
           slider
-          checked={isSpecialCharacter}
-          onClick={() => setSpecialCharacter(!isSpecialCharacter)}
+          checked={params.hasSpecialCharacter}
+          onClick={() =>
+            setParams({
+              hasNumber: params.hasNumber,
+              hasSpecialCharacter: !params.hasSpecialCharacter,
+              hasUpperCaseLetters: params.hasUpperCaseLetters
+            })
+          }
         />
         <Span>Special Characters</Span>
       </CheckboxContainer>

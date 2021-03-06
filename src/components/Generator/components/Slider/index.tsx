@@ -1,19 +1,29 @@
-import React, { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, useContext } from 'react'
 
+/**
+ * Components.
+ */
+import { PasswordGenerateContext } from '../Context'
+
+/**
+ * Styles.
+ */
 import { Input, Container, Span } from './styles'
 
 export function Slider() {
   /**
-   * States.
+   * Hooks.
    */
-  const [value, setValue] = useState<number>(4)
+  const { setPasswordLength, passwordLength } = useContext(
+    PasswordGenerateContext
+  )
 
   /**
    * Component functions.
    */
   const handleValue = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
-    setValue(+value)
+    setPasswordLength(+value)
   }
 
   return (
@@ -24,7 +34,7 @@ export function Slider() {
           type="range"
           min="4"
           max="32"
-          value={value}
+          value={passwordLength}
           onChange={handleValue}
         />
         <Span>32</Span>

@@ -21,6 +21,7 @@ export const CheckboxContainer = styled.div`
 
 export const Span = styled.span`
   color: white;
+  font-size: 14px;
   font-weight: bold;
   margin: 0px 0px 0px 10px;
 `

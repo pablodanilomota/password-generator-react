@@ -8,7 +8,7 @@ export const Container = styled.div`
   margin: 20px;
 `
 export const OptionsContainer = styled.div`
-  margin: 30px 0px 20px 0px;
+  margin: 40px 0px 20px 0px;
   width: 750px;
 `
 
@@ -24,10 +24,5 @@ export const GeneratedPasswordContainer = styled.div`
   width: 100%;
   text-align: center;
   margin: 60px 0px;
-`
-
-export const GeneratedPassword = styled.span`
-  font-weight: bold;
-  font-size: 4rem;
-  font-color: #4bb6ad;
+  height: 100px;
 `
