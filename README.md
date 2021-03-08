@@ -16,8 +16,6 @@ Esse projeto foi realizado no [Challenge da FW7](https://github.com/fw7-solucoes
 
 Nesse desafio o objetivo era criar uma interface onde o usuário possa criar senhas de forma aleatória seguindo uma configuração pré estabelecida.
 
-<br/>
-
 ### 🎯 Objetivos do challenge: 
 
 - Deve ser possível escolher a quantidade de caracteres a serem gerados. _(4 - 32)_
@@ -34,7 +32,9 @@ Nesse desafio o objetivo era criar uma interface onde o usuário possa criar sen
 - React
 - Styled components
 - Semantic ui
-- netlify
+- Netlify
+
+<br />
 
 🛰 Da uma conferida lá no <a href="https://password-generator-react-app.netlify.app/">Preview</a>
 
