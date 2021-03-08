@@ -9,3 +9,6 @@ body {
   color: white!important;
 }
 
+body > #root {
+  height: 100%;
+}
